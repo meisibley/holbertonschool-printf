@@ -8,7 +8,9 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, j, arg = 0;
+	int i = 0, j, arg = 0;
+	int *prt = &i;
+
 	prn_t pr[] = {
 		{"c", prnt_char},
 		{"s", prnt_string}
@@ -30,7 +32,7 @@ int _printf(const char *format, ...)
 		{
 			for (j = 0; pr[j].p[0] != '\0'; j++)
 			{
-				if (pr[j].p[0] == format[i + 1])
+				if (pr[j].p[0] == format[*(prt) + 1])
 					arg = pr[j].pf(pri, arg);
 			}
 			i++;
