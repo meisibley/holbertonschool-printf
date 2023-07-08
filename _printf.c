@@ -25,39 +25,22 @@ int _printf(const char *format, ...)
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%' && format[i + 1] == '%')
-		{
-			_putchar('%');
-			arg++;
-			i++;
-		}
+			_putchar('%'), arg++, i++;
 		else if (format[i] == '%')
 		{
 			for (j = 0; pr[j].p != NULL; j++)
 			{
 				if (pr[j].p[0] == format[i + 1])
-				{
-					arg = pr[j].pf(pri, arg);
-					flag++;
-				}
+					arg = pr[j].pf(pri, arg), flag++;
 			}
 			if (flag == 0)
-			{
-				_putchar(format[i]);
-				arg++;
-			}
+				_putchar(format[i]), arg++;
 			else
-			{
-				flag++;
-				i++;
-			}
+				flag++, i++;
 		}
 		else
-		{
-			_putchar(format[i]);
-			arg++;
-		}
+			_putchar(format[i]), arg++;
 	}
 	va_end(pri);
 	return (arg);
-}
-	
+}	
