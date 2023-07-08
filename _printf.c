@@ -2,9 +2,9 @@
 
 /**
  * _printf - a function that produces output according to a format
- * @format: input arguments list and types.
+ * @format: according data types to print out data
  *
- * Return: the number of characters printed.
+ * Return: the count of print time
  */
 int _printf(const char *format, ...)
 {
