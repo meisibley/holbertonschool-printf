@@ -9,11 +9,11 @@
 int _printf(const char *format, ...)
 {
 	int i = 0, j, arg = 0;
-	int *prt = &i;
 
 	prn_t pr[] = {
 		{"c", prnt_char},
-		{"s", prnt_string}
+		{"s", prnt_string},
+		{NULL, NULL}
 	};
 	va_list pri;
 
@@ -30,9 +30,9 @@ int _printf(const char *format, ...)
 		}
 		else if (format[i] == '%')
 		{
-			for (j = 0; pr[j].p[0] != '\0'; j++)
+			for (j = 0; pr[j].p != NULL; j++)
 			{
-				if (pr[j].p[0] == format[*(prt) + 1])
+				if (pr[j].p[0] == format[i + 1])
 					arg = pr[j].pf(pri, arg);
 			}
 			i++;
