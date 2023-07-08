@@ -14,7 +14,7 @@ typedef struct prnt
 
 int _putchar(char c);
 int _strlen(char *s);
-int _printf(const char * format, ...);
+int _printf(const char *format, ...);
 int prnt_char(va_list c, int a);
 int prnt_string(va_list s, int a);
 
