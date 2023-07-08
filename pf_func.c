@@ -28,6 +28,8 @@ int prnt_string(va_list s, int a)
 	int i;
 
 	str = va_arg(s, char *);
+	if (str == NULL)
+		str = "(null)";
 
 	for (i = 0; str && str[i] != '\0'; i++)
 	{
