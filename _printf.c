@@ -13,14 +13,14 @@ int _printf(const char *format, ...)
 	prn_t pr[] = {
 		{"c", prnt_char},
 		{"s", prnt_string},
+		{"d", prnt_doi},
+		{"i", prnt_doi},
 		{NULL, NULL}
 	};
 	va_list pri;
 
 	va_start(pri, format);
-	if (format == NULL)
-		return (-1);
-	if (format[0] == '%' && format[1] == '\0')
+	if ((format[0] == '%' && format[1] == '\0') || format == NULL)
 		return (-1);
 	for (i = 0; format[i] != '\0'; i++)
 	{

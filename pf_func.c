@@ -32,10 +32,44 @@ int prnt_string(va_list s, int a)
 		str = "(null)";
 
 	for (i = 0; str && str[i] != '\0'; i++)
-	{
-		_putchar(str[i]);
-		a++;
-	}
+		_putchar(str[i]), a++;
 
+	return (a);
+}
+
+/**
+ * prnt_doi - print a decimal or integer number
+ * @doi: decimal or integer number to print
+ * @a: number of characters printed
+ *
+ * Return: number a.
+ */
+int prnt_doi(va_list doi, int a)
+{
+	int i, n, euk = 0;
+
+	n = va_arg(doi, int);
+	if (n < 0)
+		_putchar('-'), a++, n *= -1;
+	if (n < 10)
+	{
+		_putchar(n + 48), a++;
+		return (a);
+	}
+	else
+	{
+	for (i = 1000000000; i > 0; (i /= 10))
+	{
+		if (n / i != 0 && euk == 0)
+			euk++;
+		if (euk != 0)
+		{
+			if (i > 9)
+				_putchar(n / i + 48), n = n % i, a++;
+			else
+				_putchar(n / i + 48), a++;
+		}
+	}
+	}
 	return (a);
 }
