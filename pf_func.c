@@ -40,36 +40,39 @@ int prnt_string(va_list s, int a)
 /**
  * prnt_doi - print a decimal or integer number
  * @doi: decimal or integer number to print
- * @a: number of characters printed
+ * @a: number of printed
  *
  * Return: number a.
  */
 int prnt_doi(va_list doi, int a)
 {
-	int i, n, euk = 0;
+	int n;
 
 	n = va_arg(doi, int);
-	if (n < 0)
-		_putchar('-'), a++, n *= -1;
-	if (n < 10)
+	if (n == 0)
 	{
-		_putchar(n + 48), a++;
+		_putchar(48), a++;
 		return (a);
 	}
-	else
-	{
-	for (i = 1000000000; i > 0; (i /= 10))
-	{
-		if (n / i != 0 && euk == 0)
-			euk++;
-		if (euk != 0)
-		{
-			if (i > 9)
-				_putchar(n / i + 48), n = n % i, a++;
-			else
-				_putchar(n / i + 48), a++;
-		}
-	}
-	}
+	if (n < 0)
+		_putchar('-'), a++, n *= -1;
+	a = prnt_unint((unsigned int)n, a);
+	return (a);
+}
+
+/**
+ * prnt_unint - print an unsigned int number
+ * @n: unsigned int
+ * @a: number of printed
+ * Return: a.
+ */
+int prnt_unint(unsigned int n, int a)
+{
+	if (n == 0)
+		return (a);
+	if (n / 10)
+		a = prnt_unint(n / 10, a);
+	_putchar(n % 10 + 48);
+	a++;
 	return (a);
 }
