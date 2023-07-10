@@ -20,7 +20,9 @@ int _printf(const char *format, ...)
 	va_list pri;
 
 	va_start(pri, format);
-	if ((format[0] == '%' && format[1] == '\0') || format == NULL)
+	if (format == NULL)
+		return (-1);
+	if (format[0] == '%' && format[1] == '\0')
 		return (-1);
 	for (i = 0; format[i] != '\0'; i++)
 	{
