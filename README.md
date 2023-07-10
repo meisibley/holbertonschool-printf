@@ -16,13 +16,15 @@ USAGE :
 
 To use the '_printf' function, include the header file in your C program:
 
-#include "printf.h"
+#include "main.h"
 
 Feel free to modify the content and structure of the README.md file according to your specific needs.
 
-then you can call the function with a format string and the corresponding arguments:
+then you can call the function with a format string and the corresponding argument:
 
 Examples:
+	if (format[0] == '%' && format[1] == '\0')
+		return (-1);
 
 Limitations:
 * This implementation does not handle field width, precision, or other
