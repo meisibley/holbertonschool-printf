@@ -87,7 +87,7 @@ int prnt_bnry(va_list b, int a)
 {
 	unsigned int bb;
 	int rmd = 0;
-       
+
 	bb = va_arg(b, unsigned int);
 
 	if (bb == 0 || bb == 1)
