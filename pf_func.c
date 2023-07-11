@@ -92,7 +92,7 @@ int prnt_bnry(va_list b, int a)
 
 	if (bb == 0 || bb == 1)
 	{
-		_putchar(bb + 48);
+		_putchar(bb + 48), a++;
 		return (a);
 	}
 	else
