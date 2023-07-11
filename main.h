@@ -20,5 +20,7 @@ int prnt_char(va_list c, int a);
 int prnt_string(va_list s, int a);
 int prnt_doi(va_list doi, int a);
 int prnt_unint(unsigned int n, int a);
+int prnt_bnry(va_list b, int a);
+int sub_prnt_bnry(unsigned int bb, int a);
 
 #endif
