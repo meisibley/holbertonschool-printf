@@ -1,37 +1,22 @@
 # _printf
 
-this '_printf' is a custom implementation of the 'printf' function in C.this implementation supports the conversion specifiers '%c', '%s', and '&&'
+This is a recreation of a popular C language function that can do formatted printing to standard output. Tasked to us by Holberton School, this emulation of the already popular function will provide us with a better understanding of the inner workings of the printf function. This '_printf' is a custom implementation of the 'printf' function in C.this implementation supports the conversion specifiers '%c', '%s', '%i', '%d' and '%%'.
 
-## Prototype
+## Flowchar
+![printf_flowchar](https://github.com/user-attachments/assets/d2dd1038-09af-4707-8e4f-144abc7d42c9)
 
-```c
-int _printf(const char *format, ...);
+## Compilation
+$  gcc -Wall -Werror -Wextra -pedantic *.c
 
-RETURN VALUE :
+## Fomatting
+| Conversion    | Specifiers    |                            |
+| ------------- |:-------------:| ---------------:           |
+| %c | prints a character                                    |
+| %s | prints a string          |                            |
+| %% | prints a percent         |                            |
+| %d | prints a decimal integer | assumes base 10            |
+| %i | prints a decimal integer | detects base automatically |
 
-the '_printf' function retunrs the number of characters printed
-(excluding the null btye used to end out yo strings).
-
-USAGE :
-
-To use the '_printf' function, include the header file in your C program:
-
-#include "main.h"
-
-Feel free to modify the content and structure of the README.md file according to your specific needs.
-
-then you can call the function with a format string and the corresponding argument:
-
-Examples:
-	if (format[0] == '%' && format[1] == '\0')
-		return (-1);
-
-Limitations:
-* This implementation does not handle field width, precision, or other
-advanced features of the 'printf' function.
-* The Length modifiers are not supported.
-* The flag characters are not handled
-
-License:
-
-Feel free to modify the content and structure of the README.md file according to your specific needs.
+## Contributors
+1. C.J. Johnson
+3. Mei Sibley - mei.sibley@atlasschoolcom
